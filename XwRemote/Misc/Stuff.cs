@@ -81,7 +81,7 @@ namespace XwRemote.Misc
             message += MailBox.Text + "\n";
             message += "*******************************************************************\n";
 
-            var ravenClient = new RavenClient("https://11dbb280832c4f52a000577bf8eee1f8@sentry.io/1210500");
+            var ravenClient = new RavenClient("https://559645f8453744f6a5762494cdf4e01c@o406883.ingest.sentry.io/5275199");
             SentryMessage msg = new SentryMessage(message);
             SentryEvent ev = new SentryEvent(msg);
             ravenClient.Capture(ev);
@@ -104,11 +104,11 @@ namespace XwRemote.Misc
         private async Task CheckUpdates()
         {
             using (WebClient client = new WebClient())
-            {
+            {                
 #if DEBUG
-                string URL = $"https://github.com/maxsnts/{Main.UpdateRepo}/releases/tag/v3.0.1.0";
+                string URL = $"https://github.com/SeFiech/{Main.UpdateRepo}/releases/tag/v3.0.1.0";
 #else
-                string URL = $"https://github.com/maxsnts/{Main.UpdateRepo}/releases/latest";
+                string URL = $"https://github.com/SeFiech/{Main.UpdateRepo}/releases/latest";
 #endif
 
                 try
@@ -170,7 +170,7 @@ namespace XwRemote.Misc
             string path = Environment.CurrentDirectory;
             using (WebClient client = new WebClient())
             {
-                string URL = $"https://github.com/maxsnts/{Main.UpdateRepo}/releases/download/v{NewVersion}/{Main.UpdateRepo}.v{NewVersion}.zip";
+                string URL = $"https://github.com/SeFiech/{Main.UpdateRepo}/releases/download/v{NewVersion}/{Main.UpdateRepo}.v{NewVersion}.zip";
                 try
                 {
                     client.DownloadFileCompleted += Client_DownloadFileCompleted;
@@ -232,7 +232,7 @@ namespace XwRemote.Misc
             catch
             {
                 labelVersion.Text = "Unable to check for updates, update manually";
-                string URL = $"https://github.com/maxsnts/{Main.UpdateRepo}/releases/download/v{NewVersion}/{Main.UpdateRepo}.v{NewVersion}.zip";
+                string URL = $"https://github.com/SeFiech/{Main.UpdateRepo}/releases/download/v{NewVersion}/{Main.UpdateRepo}.v{NewVersion}.zip";
                 linkLatest.Text = URL;
                 linkLatest.Visible = true;
                 buttonUpdate.Enabled = false;

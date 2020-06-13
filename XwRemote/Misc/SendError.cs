@@ -97,7 +97,7 @@ namespace XwRemote.Misc
         private void buttonOK_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            var ravenClient = new RavenClient("https://11dbb280832c4f52a000577bf8eee1f8@sentry.io/1210500");
+            var ravenClient = new RavenClient("https://559645f8453744f6a5762494cdf4e01c@o406883.ingest.sentry.io/5275199");
             SentryEvent ev = new SentryEvent(Ex);
             ev.Extra = ReportBox.Text;
             ev.Extra += AddSeparator("Comment", '*', true, true);
